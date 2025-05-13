@@ -1,0 +1,5 @@
+.git-credentials
+configs/.ssh/keys/*
+!configs/.ssh/keys/*.pub
+configs/tmux/plugins/*
+!configs/tmux/plugins/tpm
