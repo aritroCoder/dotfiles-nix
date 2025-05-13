@@ -21,9 +21,11 @@
         nixos =
           lib.nixosSystem { # must be same as hostname in configuration.nix
             inherit system;
-            modules = [ ./configuration.nix 
+            modules = [
+              ./configuration.nix
               home-manager.nixosModules.home-manager
-              { home-manager.backupFileExtension = "bak"; }];
+              { home-manager.backupFileExtension = "bak"; }
+            ];
           };
       };
 
@@ -31,9 +33,7 @@
         fishnak =
           home-manager.lib.homeManagerConfiguration { # must be same as username whose config we are making
             inherit pkgs;
-            modules = [
-              ./home.nix
-            ];
+            modules = [ ./home.nix ];
           };
       };
     };
