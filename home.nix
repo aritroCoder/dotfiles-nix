@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+      ./modules/ssh.nix
+  ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -46,7 +49,8 @@
     ".config/tmux".source = ./configs/tmux;
     ".config/alacritty".source = ./configs/alacritty;
     ".config/nvim".source = ./configs/nvim;
-    ".ssh".source = ./configs/.ssh;
+    # ".ssh/keys".source = ./configs/.ssh/keys;
+    ".ssh/known_hosts".source = ./configs/.ssh/known_hosts;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
