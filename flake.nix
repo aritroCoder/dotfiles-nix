@@ -21,7 +21,9 @@
         nixos =
           lib.nixosSystem { # must be same as hostname in configuration.nix
             inherit system;
-            modules = [ ./configuration.nix ];
+            modules = [ ./configuration.nix 
+              home-manager.nixosModules.home-manager
+              { home-manager.backupFileExtension = "bak"; }];
           };
       };
 
@@ -31,8 +33,6 @@
             inherit pkgs;
             modules = [
               ./home.nix
-              home-manager.nixosModules.home-manager
-              { home-manager.backupFileExtension = "bak"; }
             ];
           };
       };
