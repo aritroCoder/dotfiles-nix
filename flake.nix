@@ -29,12 +29,8 @@
         fishnak =
           home-manager.lib.homeManagerConfiguration { # must be same as username whose config we are making
             inherit pkgs;
-            modules = [
-            ./home.nix
-            {
-                home-manager.backupFileExtension = "bak";
-            }
-            ];
+            modules =
+              [ ./home.nix { home-manager.backupFileExtension = "bak"; } ];
           };
       };
     };
