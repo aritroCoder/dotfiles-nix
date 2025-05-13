@@ -109,6 +109,11 @@
      pkgs.alacritty
      git
      neovim
+     gcc
+     pkg-config
+     gnumake
+     libtool
+     libiconv
   ];
 
   fonts.packages = with pkgs; [
